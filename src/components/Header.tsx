@@ -37,7 +37,7 @@ const Header = memo(({ onSearch }: Props) => {
   return (
     <div>
       <header className="py-6 flex items-center justify-between max-md:flex-col max-md:block">
-        <h1 className="font-bold text-primary text-3xl flex-[2] max-md:mb-4">
+        <h1 className="font-bold text-primary text-3xl flex-[2] max-md:mb-4 max-md:text-center">
           News Updates
         </h1>
         <div className="flex-1">

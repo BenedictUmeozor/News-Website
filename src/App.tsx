@@ -144,7 +144,7 @@ const App = () => {
                 href="https://benedictumeozor.vercel.app"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="text-primary"
+                className="text-primary text-[0.9rem]"
               >
                 Benedict
               </a>

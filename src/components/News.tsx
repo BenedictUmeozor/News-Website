@@ -38,7 +38,7 @@ const News = memo(({ news }: Props) => {
           href={news.url}
           rel="noreferer noopener"
           target="_blank"
-          className="block text-primary font-semibold text-xl mb-3"
+          className="block text-primary font-semibold text-xl mb-3 hover:text-[#030372]"
         >
           {news.title.length < 80
             ? news.title
