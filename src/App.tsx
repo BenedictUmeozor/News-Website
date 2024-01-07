@@ -21,31 +21,41 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  type Obj = {
+    keywords: string | null;
+    limit: number | null;
+    offset: number | null;
+  };
+
   const request = async (
     keywords?: string,
     limit?: number,
     offset?: number
   ) => {
-    let url: string = `http://api.mediastack.com/v1/news?access_key=${
-      import.meta.env.VITE_API_KEY
-    }&languages=en`;
+    const url: string = import.meta.env.VITE_BASE_API;
+
+    const obj: Obj = {
+      keywords: null,
+      limit: null,
+      offset: null,
+    };
 
     if (keywords) {
-      url = url + `&keywords=${keywords}`;
+      obj.keywords = keywords;
     }
 
     if (limit && limit > 0) {
-      url = url + `&limit=${limit}`;
+      obj.limit = limit;
     }
 
     if (offset && offset > 0) {
-      url = url + `&offset=${offset}`;
+      obj.offset = offset;
     }
 
     try {
       setIsLoading(true);
       setError(false);
-      const response: AxiosResponse = await axios.get(url);
+      const response: AxiosResponse = await axios.post(url, obj);
       return response.data;
     } catch (error) {
       console.log(error);
