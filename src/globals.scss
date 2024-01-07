@@ -1,3 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  word-wrap: break-word;
+}
+
+body {
+  background-color: white;
+  color: #1d1d1b;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
