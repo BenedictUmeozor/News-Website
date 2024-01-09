@@ -88,6 +88,12 @@ const App = () => {
     await getNews(term, pageSize || 9);
   };
 
+  const fetchNews = async () => {
+    setCurrentPage(1);
+    setSearchTerm("");
+    await getNews("", 9);
+  };
+
   useEffect(() => {
     getNews("", 9);
   }, []);
@@ -98,7 +104,7 @@ const App = () => {
         <Container className="app">
           <Header
             onSearch={findBySearch}
-            getNews={async () => await getNews("", 9)}
+            getNews={async () => await fetchNews()}
           />
           <div className="flex items-center justify-center">
             {" "}
