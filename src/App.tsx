@@ -96,7 +96,10 @@ const App = () => {
     <>
       <main>
         <Container className="app">
-          <Header onSearch={findBySearch} />
+          <Header
+            onSearch={findBySearch}
+            getNews={async () => await getNews("", 9)}
+          />
           <div className="flex items-center justify-center">
             {" "}
             {!isLoading && news && news.length > 0 && (
